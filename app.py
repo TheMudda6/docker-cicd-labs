@@ -1,4 +1,4 @@
-import definitelynotreal
+import flask
 
 app = flask.Flask(__name__)
 
