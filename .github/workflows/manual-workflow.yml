@@ -52,12 +52,15 @@ jobs:
           path: deployment-log.txt
 
   build:
-  
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
-      - name: Build stage
-        run: echo "Building application after tests passed"
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Build Docker Image
+      run: docker build -t docker-cicd-labs:v1.${{ github.run_number }} .
 
   deploy:
     needs: build
