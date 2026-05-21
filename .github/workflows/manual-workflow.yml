@@ -52,7 +52,7 @@ jobs:
           path: deployment-log.txt
 
   build:
-    needs: test
+  
     runs-on: ubuntu-latest
 
     steps:
