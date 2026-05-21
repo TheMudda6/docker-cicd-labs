@@ -12,6 +12,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    environment:
+      name: production
+
     strategy:
       matrix:
         python-version: ["3.8", "3.9", "3.10", "3.11"]
