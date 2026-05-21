@@ -50,3 +50,19 @@ jobs:
         with:
           name: deployment-log
           path: deployment-log.txt
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build stage
+        run: echo "Building application after tests passed"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy stage
+        run: echo "Deploying application after build completed"
