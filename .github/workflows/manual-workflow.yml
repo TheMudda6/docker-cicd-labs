@@ -41,3 +41,12 @@ jobs:
 
       - name: Run Tests
         run: python -c "import app"
+    
+      - name: Create deployment log
+        run: echo "Deployment completed successfully" > deployment-log.txt
+
+      - name: Upload deployment artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: deployment-log
+          path: deployment-log.txt
